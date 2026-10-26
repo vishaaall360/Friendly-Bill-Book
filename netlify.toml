@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build"
+  publish = "dist/frontend"
+
+# Set VITE_API_URL in Netlify to the deployed backend API origin.
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"

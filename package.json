@@ -1,0 +1,39 @@
+{
+  "name": "jb-yst-crm",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "author": "JB YOUR SAFE TECHNOLOGY",
+  "license": "PROPRIETARY",
+  "description": "JB YOUR SAFE TECHNOLOGY - Complete Business CRM Solution",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently -k \"npm run server\" \"wait-on http://localhost:5000/api/health && npm run client\"",
+    "client": "npm run dev --workspace frontend",
+    "server": "npm run dev --workspace backend",
+    "build": "npm run build --workspace frontend",
+    "lint": "oxlint backend",
+    "preview": "npm run preview --workspace frontend",
+    "start": "npm run start --workspace backend"
+  },
+  "devDependencies": {
+    "@types/node": "^26.3.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "concurrently": "^9.2.1",
+    "oxlint": "^1.79.0",
+    "typescript": "^7.0.2",
+    "wait-on": "^9.0.0"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "allowScripts": {
+    "bcrypt@6.0.0": true
+  }
+}

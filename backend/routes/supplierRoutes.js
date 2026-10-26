@@ -1,0 +1,1 @@
+export { supplierRoutes as default } from './genericRoutes.js'

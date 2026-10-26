@@ -1,0 +1,230 @@
+.document-theme-selector {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+.selected-theme-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.label-text {
+  display: block;
+  color: #243447;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.selected-theme-help {
+  margin: 4px 0 0;
+  color: #718096;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.selected-theme-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  padding: 9px 13px;
+  border: 2px solid var(--theme-primary);
+  border-radius: 7px;
+  background: var(--theme-background);
+  color: var(--theme-primary);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.selected-theme-chip:hover {
+  box-shadow: 0 5px 14px rgba(36, 52, 71, 0.12);
+  transform: translateY(-1px);
+}
+
+.theme-swatch {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--theme-primary);
+}
+
+.templates-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(18, 30, 42, 0.5);
+}
+
+.templates-modal {
+  width: min(820px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 22px 70px rgba(18, 30, 42, 0.22);
+}
+
+.modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e7edf3;
+}
+
+.modal-header h3 {
+  margin: 5px 0 0;
+  color: #243447;
+  font-size: 20px;
+}
+
+.eyebrow {
+  color: #718096;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.close-button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d9e2eb;
+  border-radius: 6px;
+  background: #fff;
+  color: #536579;
+  cursor: pointer;
+}
+
+.theme-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 22px 24px 26px;
+}
+
+.document-theme-option {
+  position: relative;
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 12px;
+  border: 2px solid #e1e8ef;
+  border-radius: 8px;
+  background: #fff;
+  color: #243447;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.document-theme-option:hover,
+.document-theme-option.active {
+  border-color: var(--theme-primary);
+  background: var(--theme-background);
+  box-shadow: 0 8px 18px rgba(36, 52, 71, 0.1);
+  transform: translateY(-2px);
+}
+
+.document-theme-option.active::before {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--theme-primary);
+  content: '';
+}
+
+.theme-option-preview {
+  display: grid;
+  gap: 8px;
+  min-height: 86px;
+  padding: 10px;
+  border: 1px solid var(--theme-secondary);
+  border-top: 5px solid var(--theme-primary);
+  background: #fff;
+  color: var(--theme-dark);
+  font-size: 10px;
+}
+
+.theme-preview-top {
+  display: block;
+  width: 70%;
+  height: 7px;
+  background: var(--theme-primary);
+}
+
+.theme-preview-lines {
+  display: grid;
+  gap: 4px;
+}
+
+.theme-preview-lines i {
+  display: block;
+  height: 3px;
+  background: var(--theme-accent);
+}
+
+.theme-preview-lines i:nth-child(2) { width: 78%; }
+.theme-preview-lines i:nth-child(3) { width: 58%; }
+
+.theme-option-preview strong {
+  justify-self: end;
+  color: var(--theme-dark);
+}
+
+.theme-option-copy {
+  display: grid;
+  gap: 6px;
+  padding-right: 8px;
+}
+
+.theme-option-copy strong {
+  color: var(--theme-dark);
+  font-size: 14px;
+}
+
+.theme-option-copy span {
+  color: #718096;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.theme-active-check {
+  position: absolute;
+  top: 8px;
+  right: 18px;
+  color: var(--theme-primary);
+}
+
+@media (max-width: 680px) {
+  .selected-theme-display {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .theme-options-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .modal-header {
+    padding: 18px 16px;
+  }
+}

@@ -1,0 +1,4 @@
+import ResourcePage from '../../components/common/ResourcePage'
+
+function DeliveryChallans() { return <ResourcePage title="Delivery Challans" description="Track goods delivered to customers and their delivery status." endpoint="/delivery-challans" fields={[{ name: 'challan_number', label: 'Challan number' }, { name: 'customer_id', label: 'Customer ID' }, { name: 'notes', label: 'Remarks', required: false }]} columns={[{ key: 'challan_number', label: 'Challan' }, { key: 'customer_id', label: 'Customer' }, { key: 'challan_date', label: 'Date' }, { key: 'status', label: 'Status' }]} formDefaults={{ status: 'Open' }} /> }
+export default DeliveryChallans

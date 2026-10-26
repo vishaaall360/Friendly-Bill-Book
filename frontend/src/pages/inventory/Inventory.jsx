@@ -1,0 +1,3 @@
+import ResourcePage from '../../components/common/ResourcePage'
+function Inventory() { return <ResourcePage title="Inventory" description="Monitor products, pricing, stock value, and reorder signals." endpoint="/inventory/products" fields={[{ name: 'product_name', label: 'Product name' }, { name: 'sku', label: 'SKU' }, { name: 'selling_price', label: 'Selling price', type: 'number' }, { name: 'gst', label: 'GST rate', type: 'number' }]} columns={[{ key: 'sku', label: 'SKU' }, { key: 'product_name', label: 'Product' }, { key: 'current_stock', label: 'Stock' }, { key: 'selling_price', label: 'Price' }]} formDefaults={{ unit: 'pcs', purchase_price: 0, selling_price: 0, gst: 18, opening_stock: 0, current_stock: 0, minimum_stock: 0 }} /> }
+export default Inventory
